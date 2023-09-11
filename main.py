@@ -6,12 +6,13 @@ e1 = []
 e2 = []
 w = []
 
-with open('data.dat','r') as file:
+with open('data.csv','r') as file:
+    reader = csv.reader(file,delimiter=',')
     
-    for lines in file:
-        w.append(lines.split()[0])
-        e1.append(lines.split()[1])
-        e2.append(lines.split()[2])
+    for row in reader:
+        w.append(row[0])
+        e1.append(row[1])
+        e2.append(row[2])
 
     file.close()
 
